@@ -16,18 +16,14 @@
       height: 100%;
       font-family: 'Open Sans', sans-serif;
       overflow: hidden;
+      background: linear-gradient(to bottom, #ffe3ec, #ffd6e0);
     }
 
-    /* Slideshow background */
     .slideshow {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      z-index: -1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(to bottom, #ffe3ec, #ffd6e0);
+      z-index: -2;
     }
 
     .slideshow img {
@@ -54,13 +50,20 @@
     .container {
       position: relative;
       z-index: 1;
-      background: rgba(255, 255, 255, 0.85);
       padding: 40px;
       border-radius: 20px;
       max-width: 600px;
       margin: 50px auto;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       text-align: center;
+
+      /* Use a photo as background here */
+      background: url('download (4).jpg') no-repeat center center/cover;
+
+      /* Add soft overlay */
+      background-blend-mode: overlay;
+      background-color: rgba(255, 255, 255, 0.7);
+
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -120,6 +123,7 @@
 
     <footer>
       Made with love by your engineer 💻❤️
+      Engr. Rovic Salvador
     </footer>
   </div>
 
