@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>1895 Days With You</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
       margin: 0;
       padding: 0;
+      height: 100%;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #ffe3ec, #ffd6e0);
-      color: #4a4a4a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
+      overflow: hidden;
     }
+
+    /* Slideshow background */
+    .slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #ffe3ec, #ffd6e0);
+    }
+
+    .slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fadeImages 20s infinite;
+    }
+
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 6.6s; }
+    .slideshow img:nth-child(3) { animation-delay: 13.2s; }
+
+    @keyframes fadeImages {
+      0% { opacity: 0; }
+      10% { opacity: 0.3; }
+      20% { opacity: 0.3; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
     .container {
-      background: white;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.85);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       max-width: 600px;
+      margin: 50px auto;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
+
     h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 2.5em;
       color: #d63384;
+      margin-bottom: 20px;
     }
+
     p {
       margin: 20px 0;
       line-height: 1.6;
+      color: #4a4a4a;
     }
-    .photo {
-      width: 100%;
-      margin-bottom: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+
     footer {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 0.9em;
-      color: #999;
+      color: #777;
     }
   </style>
 </head>
 <body>
+
+  <div class="slideshow">
+    <img src="download (1).jpg" alt="Photo 1">
+    <img src="download (2).jpg" alt="Photo 2">
+    <img src="download (3).jpg" alt="Photo 3">
+  </div>
+
   <div class="container">
-    <img src="download (1).jpg" alt="Love Photo" class="photo">
     <h1>1895 Days With You</h1>
     <p>In the quiet of time, three years flew fast,<br>
     But every moment with you, I wished it would last.<br>
@@ -81,5 +122,6 @@
       Made with love by your engineer 💻❤️
     </footer>
   </div>
+
 </body>
 </html>
