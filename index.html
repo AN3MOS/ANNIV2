@@ -10,12 +10,11 @@
       box-sizing: border-box;
     }
 
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: 'Open Sans', sans-serif;
-      overflow: hidden;
       background: linear-gradient(to bottom, #ffe3ec, #ffd6e0);
     }
 
@@ -23,7 +22,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      z-index: -2;
+      z-index: -3;
     }
 
     .slideshow img {
@@ -41,8 +40,8 @@
 
     @keyframes fadeImages {
       0% { opacity: 0; }
-      10% { opacity: 0.3; }
-      20% { opacity: 0.3; }
+      10% { opacity: 0.25; }
+      20% { opacity: 0.25; }
       30% { opacity: 0; }
       100% { opacity: 0; }
     }
@@ -53,16 +52,13 @@
       padding: 40px;
       border-radius: 20px;
       max-width: 600px;
-      margin: 50px auto;
+      margin: 60px auto;
       text-align: center;
 
-      /* Use a photo as background here */
-      background: url('download (4).jpg') no-repeat center center/cover;
-
-      /* Add soft overlay */
-      background-blend-mode: overlay;
-      background-color: rgba(255, 255, 255, 0.7);
-
+      background: 
+        linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),
+        url('download (4).jpg') center/cover no-repeat;
+      
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
@@ -88,12 +84,14 @@
 </head>
 <body>
 
+  <!-- 🔄 Background slideshow -->
   <div class="slideshow">
     <img src="download (1).jpg" alt="Photo 1">
     <img src="download (2).jpg" alt="Photo 2">
-    <img src="download (3).jpg" alt="Photo 3">
+    <img src="download (3)" alt="Photo 3">
   </div>
 
+  <!-- 📝 Text content with transparent photo bg -->
   <div class="container">
     <h1>1895 Days With You</h1>
     <p>In the quiet of time, three years flew fast,<br>
@@ -123,7 +121,7 @@
 
     <footer>
       Made with love by your engineer 💻❤️
-      Engr. Rovic Salvador
+      <p>Engr. Rovic Salvador</p>
     </footer>
   </div>
 
